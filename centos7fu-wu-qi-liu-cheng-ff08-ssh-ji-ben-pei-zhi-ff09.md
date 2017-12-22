@@ -4,7 +4,6 @@
 
   ```
   ssh root@192.168.1.125
-
   ```
 
   这时，会出现警告，提示这是一个新的地址，存在安全风险。接收则输入yes
@@ -17,14 +16,12 @@
   RSA key fingerprint is88:57:1d:68:61:d8:1d:7c:e4:10:bc:2c:1e:e2:93:e1.
 
   Are you sure you want to continue connecting (yes/no)?
-
   ```
 
   登录远程主机之后修改root密码
 
   ```
   passwd
-
   ```
 
 ## 第二步：新建用户 {#第二步新建用户}
@@ -33,7 +30,6 @@
 
   ```
   groupadd admin
-
   ```
 
   然后，添加一个新的用户
@@ -48,28 +44,24 @@
 
   ```
   passwd sangjian
-
   ```
 
 * 将sangjian添加到用户组admin中
 
   ```
   usermod -a -G admin sangjian
-
   ```
 
 * 为sangjian用户设定sudo权限
 
   ```
   visudo
-
   ```
 
   visudo命令会打开文件/etc/sudoers，找到如下一行
 
   ```
   root ALL=(ALL) ALL
-
   ```
 
   添加一行
@@ -84,7 +76,6 @@
 
   ```
   ssh sangjian@192.168.1.125
-
   ```
 
 ## 第三步：SSH设置 {#第三步ssh设置}
@@ -117,14 +108,13 @@
 
   ```
   Port 6983
-
   ```
 
   修改如下设置并确保去除了\#号
 
   ```
   Protocol
- 
+
   2#禁止root用户登录
 
   PermitRootLogin no
@@ -135,14 +125,12 @@
   PermitEmptyPasswords no
 
   PasswordAuthentication yes
-
   ```
 
   最后，在配置文件的末尾添加一行用来指定可以登录的用户
 
   ```
   AllowUsers sangjian
-
   ```
 
   保存退出后，修改authorized\_keys和.ssh的文件权限
@@ -151,7 +139,6 @@
   sudo chmod 700 ~/.ssh/
 
   sudo chmod 600 ~/.ssh/authorized_keys
-
   ```
 
   确保.ssh的权限为700，authorized\_keys的权限为600，否则登录的时候会出现如下错误
@@ -164,7 +151,6 @@
 
   ```
   sudo tail -n20 /var/log/secure
-
   ```
 
   可以看到登录时的日志有如下一句
@@ -220,78 +206,71 @@
 
   找到`SELINUX=enforcing`，修改为
 
-  ```
+  \`\`\`
+
   # SELINUX=enforcing
 
+SELINUX=disabled
 
-   SELINUX=disabled
-
-  ```
-
+```
   重启服务器
+```
 
-  ```
-  sudo reboot
+sudo reboot
 
-  ```
-
+```
 ### 防火墙问题排查 {#防火墙问题排查}
 
 如果再次连接发现还是不行
 
 * 查看日志
+```
 
-  ```
-  sudo tail -n20 /var/log/secure
-  ```
+sudo tail -n20 /var/log/secure
 
+```
   发现没有失败的日志输出
 
 * 查看防火墙是否开启
+```
 
-  ```
-  systemctl status firewalld
+systemctl status firewalld
 
-  ```
-
+```
   如果开启了，则原因就是刚刚设置的ssh端口6983并没有添加到防火墙中
 
 * 添加端口到防火墙
+```
 
-  ```
-  sudofirewall-cmd--zone=public--permanent--add-port=6983/tcp
-  ```
+sudofirewall-cmd--zone=public--permanent--add-port=6983/tcp
 
+```
 * 重启防火墙
+```
 
-  ```
-  sudo systemctl restart firewalld
+sudo systemctl restart firewalld
 
-  ```
+    * 查看端口是否添加成功
 
-* 查看端口是否添加成功
+      执行`sudo firewall-cmd --list-all`，如果出现以下输出，则证明添加成功
 
-  执行`sudo firewall-cmd --list-all`，如果出现以下输出，则证明添加成功
-
-  ```
-  public (default, active) 
-  interfaces: enp0s3 
-  sources: 
-  services: dhcpv6-client ssh 
-  ports: 6983/tcp 
-  masquerade: no 
-  forward-ports: 
-  icmp-blocks: 
+public \(default, active\)   
+  interfaces: enp0s3   
+  sources:   
+  services: dhcpv6-client ssh   
+  ports: 6983/tcp   
+  masquerade: no   
+  forward-ports:   
+  icmp-blocks:   
   rich rules:
 
-  ```
+\`\`\`
 
 ## 第五步 登录服务器 {#第五步-登录服务器}
 
 SSH的配置已经完成了，下面测试以下是否可以登录
 
-输入`ssh sangjian@192.168.1.125 -p 6983`，提示`  
-Last login: Tue Jun 7 13:01:22 2016  
+输入`ssh sangjian@192.168.1.125 -p 6983`，提示`Last login: Tue Jun 7 13:01:22 2016    
 [sangjian@localhost ~]$`
 
 表示已经登录成功了，至此基于Centos7的服务器初步配置已经完成了。
