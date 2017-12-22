@@ -92,7 +92,7 @@
   可以使用scp命令将生成的id\_rsa.pub文件上传到服务器中，再将文件的内容追加到authorized\_keys文件中
 
   ```
-  scp ~/.ssh/id_rsa.pub sangjian@192.168.1.125:/home/sangjian/mac_id_rsa.pub
+  scp ~/.ssh/id_rsa.pub root@192.168.1.125:/home/sangjian/mac_id_rsa.pub
   ```
 
   上面的命令是将本地的公钥上传到服务器中的/home/sangjian目录下的mac\_id\_rsa.pub文件中
@@ -250,18 +250,18 @@ sudofirewall-cmd--zone=public--permanent--add-port=6983/tcp
 
 sudo systemctl restart firewalld
 
-    * 查看端口是否添加成功
+* 查看端口是否添加成功
 
-      执行`sudo firewall-cmd --list-all`，如果出现以下输出，则证明添加成功
+  执行`sudo firewall-cmd --list-all`，如果出现以下输出，则证明添加成功
 
-public \(default, active\)   
-  interfaces: enp0s3   
-  sources:   
-  services: dhcpv6-client ssh   
-  ports: 6983/tcp   
-  masquerade: no   
-  forward-ports:   
-  icmp-blocks:   
+public \(default, active\)  
+  interfaces: enp0s3  
+  sources:  
+  services: dhcpv6-client ssh  
+  ports: 6983/tcp  
+  masquerade: no  
+  forward-ports:  
+  icmp-blocks:  
   rich rules:
 
 \`\`\`
@@ -270,7 +270,7 @@ public \(default, active\)
 
 SSH的配置已经完成了，下面测试以下是否可以登录
 
-输入`ssh sangjian@192.168.1.125 -p 6983`，提示`Last login: Tue Jun 7 13:01:22 2016    
+输入`ssh sangjian@192.168.1.125 -p 6983`，提示`Last login: Tue Jun 7 13:01:22 2016      
 [sangjian@localhost ~]$`
 
 表示已经登录成功了，至此基于Centos7的服务器初步配置已经完成了。
