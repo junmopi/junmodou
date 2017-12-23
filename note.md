@@ -10,9 +10,17 @@ root                                                                 ——用�
 
 /home/download                                          ——存放传输文件的绝对路径
 
-
-
 2.mongodb目录下启动mongodb
 
 ./bin/mongod --config /usr/local/mongodb/mongodb.conf
+
+3.在LINUX中，周期执行的任务一般由cron这个守护进程来处理\[ps -ef\|grep cron\]。cron读取一个或多个配置文件，这些配置文件中包含了命令行及其调用时间。
+
+crontab -l  查看是否启动定时任务
+
+crontab -e 编辑执行定时任务
+
+systemctl  enable  crond 自动启动定时任务
+
+systemctl  start crond 开启定时任务服务
 
