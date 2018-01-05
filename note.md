@@ -22,5 +22,5 @@ crontab -e 编辑执行定时任务
 
 systemctl  enable  crond 自动启动定时任务
 
-systemctl  start crond 开启定时任务服务
+systemctl  start crond 开启定时任务服务..
 
