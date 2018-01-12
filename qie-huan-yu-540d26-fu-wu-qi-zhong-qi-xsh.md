@@ -4,8 +4,6 @@
 
 2. 搜索域名-&gt;修改记录值,换成需要更改的IP地址
 
-
-
 \#\# 域名切换
 
 \#\#\# 后端操作\(投票\)
@@ -52,15 +50,13 @@
 
 2. 产品中心-&gt;公众号支付-&gt;JSAPI支付授权目录,修改js支付域名地址
 
-
-
 \#\# 后端服务重启
 
 \#\#\# 微品
 
 1. 登录服务器\(名称:微品后端api\_114\_微品前端\)
 
-2. cd /www/xsh 
+2. cd /www/xsh
 
 3. php7 controll.php -s stop-all\(执行2-3次\)
 
@@ -76,7 +72,7 @@
 
 1. 登录服务器\(名称:投票api\)
 
-2. cd /home/phpspace/xshsy 
+2. cd /home/phpspace/xshsy
 
 3. /usr/local/php7/bin/php helper\_service\_manager.php -s stop-all\(执行2-3次\)
 
@@ -85,8 +81,6 @@
 5. 上述php命令如果执行第二次都是fail,间隔3秒 && /usr/local/php7/bin/php helper\_service\_manager.php -s start-all
 
 6. 间隔3秒 && /usr/local/php7/bin/php helper\_votetask.php -refreshwx 1
-
-
 
 \#\# 其他
 
