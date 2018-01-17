@@ -26,7 +26,7 @@ HTTP协议概览  [http://www.cnblogs.com/vamei/archive/2013/05/11/3069788.html]
 
 ② 如果浏览器自身的缓存里面没有找到对应的条目，那么Chrome会搜索操作系统自身的DNS缓存,如果找到且没有过期则停止搜索解析到此结束.
 
- 注：怎么查看操作系统自身的DNS缓存，以Windows系统为例，可以在命令行下使用 ipconfig /displaydns 来进行查看  
+注：怎么查看操作系统自身的DNS缓存，以Windows系统为例，可以在命令行下使用 ipconfig /displaydns 来进行查看
 
 ③ 如果在Windows系统的DNS缓存也没有找到，那么尝试读取hosts文件（位于C:\Windows\System32\drivers\etc），看看这里面有没有该域名对应的IP地址，如果有则解析成功。
 
@@ -158,7 +158,7 @@ URL  Uniform Resource Locator 统一资源定位符
 
 格式如下：  scheme://\\[username:password@\\]HOST:port/path/to/source
 
-            http://www.magedu.com/downloads/nginx-1.5.tar.gz
+        http://www.magedu.com/downloads/nginx-1.5.tar.gz
 
 URN  Uniform Resource Name 统一资源名称
 
@@ -194,7 +194,7 @@ Cookie           每次请求时都会携带上Cookie以方便服务器端识别
 
 Host             用来标识请求服务器上的那个虚拟主机，比如Nginx里面可以定义很多个虚拟主机
 
-            那这里就是用来标识要访问那个虚拟主机。
+        那这里就是用来标识要访问那个虚拟主机。
 
 User-Agent       用户代理，一般情况是浏览器，也有其他类型，如：wget curl 搜索引擎的蜘蛛等
 
@@ -202,7 +202,7 @@ User-Agent       用户代理，一般情况是浏览器，也有其他类型，
 
 If-Modified-Since 是浏览器向服务器端询问某个资源文件如果自从什么时间修改过，那么重新发给我，这样就保证服务器端资源
 
-        文件更新时，浏览器再次去请求，而不是使用缓存中的文件
+    文件更新时，浏览器再次去请求，而不是使用缓存中的文件
 
 安全请求首部：
 
@@ -242,25 +242,31 @@ MIME 遵循以下格式：major/minor 主类型/次类型 例如：
 
 3xx: 重定向状态码
 
-        301: 永久重定向, Location响应首部的值仍为当前URL，因此为隐藏重定向;
+```
+    301: 永久重定向, Location响应首部的值仍为当前URL，因此为隐藏重定向;
 
-       302: 临时重定向，显式重定向, Location响应首部的值为新的URL
+   302: 临时重定向，显式重定向, Location响应首部的值为新的URL
 
-      304：Not Modified  未修改，比如本地缓存的资源文件和服务器上比较时，发现并没有修改，服务器返回一个304状态码，
+  304：Not Modified  未修改，比如本地缓存的资源文件和服务器上比较时，发现并没有修改，服务器返回一个304状态码，
 
-                    告诉浏览器，你不用请求该资源，直接使用本地的资源即可。
+                告诉浏览器，你不用请求该资源，直接使用本地的资源即可。
+```
 
 4xx: 客户端错误状态码
 
-      404: Not Found  请求的URL资源并不存在
+```
+  404: Not Found  请求的URL资源并不存在
+```
 
 5xx: 服务器端错误状态码
 
-     500: Internal Server Error  服务器内部错误
+```
+ 500: Internal Server Error  服务器内部错误
 
-     502: Bad Gateway  前面代理服务器联系不到后端的服务器时出现
+ 502: Bad Gateway  前面代理服务器联系不到后端的服务器时出现
 
-     504：Gateway Timeout  这个是代理能联系到后端的服务器，但是后端的服务器在规定的时间内没有给代理服务器响应
+ 504：Gateway Timeout  这个是代理能联系到后端的服务器，但是后端的服务器在规定的时间内没有给代理服务器响应
+```
 
 用Chrome浏览器看到的响应头信息：
 
