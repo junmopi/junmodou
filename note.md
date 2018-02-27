@@ -24,3 +24,9 @@ systemctl  enable  crond 自动启动定时任务
 
 systemctl  start crond 开启定时任务服务
 
+
+
+chown -R  www seaslog/
+
+chgrp -R www seaslog/
+
