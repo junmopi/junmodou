@@ -24,9 +24,13 @@ systemctl  enable  crond 自动启动定时任务
 
 systemctl  start crond 开启定时任务服务
 
-
+报seaslog错误时：
 
 chown -R  www seaslog/
 
 chgrp -R www seaslog/
+
+启动solor：
+
+/usr/local/solr/solr-5.5.0/bin/solr start -h localhost -p 8983 -m 1g
 
