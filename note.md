@@ -34,3 +34,13 @@ chgrp -R www seaslog/
 
 /usr/local/solr/solr-5.5.0/bin/solr start -h localhost -p 8983 -m 1g
 
+启动etcd：
+
+nohup etcd --listen-client-urls http://10.27.166.170:2379 --advertise-client-urls http://10.27.166.170:2379 &gt;/dev/null &    --启动etcd服务
+
+-    nohup etcdctl watch sydev/modules/ sydev/modules0 &gt;/usr/local/inotify/symodules/change\_service.txt --endpoints=\[10.27.166.170:2379\] 2&gt;&1 &    --启动etcd监听服务
+
+-    chmod a+x /home/jw/phpspace/swooleyaf/symodules\_inotify.sh
+
+-    nohup sh /home/jw/phpspace/swooleyaf/symodules\_inotify.sh &gt;/dev/null 2&gt;&1 & --启动inotify实时更新
+
