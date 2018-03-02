@@ -36,11 +36,21 @@ chgrp -R www seaslog/
 
 启动etcd：
 
-nohup etcd --listen-client-urls http://10.27.166.170:2379 --advertise-client-urls http://10.27.166.170:2379 &gt;/dev/null &    --启动etcd服务
+nohup etcd --listen-client-urls [http://10.27.166.170:2379](http://10.27.166.170:2379) --advertise-client-urls [http://10.27.166.170:2379](http://10.27.166.170:2379) &gt;/dev/null &    --启动etcd服务
 
--    nohup etcdctl watch sydev/modules/ sydev/modules0 &gt;/usr/local/inotify/symodules/change\_service.txt --endpoints=\[10.27.166.170:2379\] 2&gt;&1 &    --启动etcd监听服务
+* nohup etcdctl watch sydev/modules/ sydev/modules0 &gt;/usr/local/inotify/symodules/change\_service.txt --endpoints=\[10.27.166.170:2379\] 2&gt;&1 &    --启动etcd监听服务
 
--    chmod a+x /home/jw/phpspace/swooleyaf/symodules\_inotify.sh
+* chmod a+x /home/jw/phpspace/swooleyaf/symodules\_inotify.sh
 
--    nohup sh /home/jw/phpspace/swooleyaf/symodules\_inotify.sh &gt;/dev/null 2&gt;&1 & --启动inotify实时更新
+* nohup sh /home/jw/phpspace/swooleyaf/symodules\_inotify.sh &gt;/dev/null 2&gt;&1 & --启动inotify实时更新
+
+启动MongoDB：
+
+/usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongodb.conf 
+
+进入MongoDB：
+
+/usr/local/mongodb/bin/mongo
+
+
 
