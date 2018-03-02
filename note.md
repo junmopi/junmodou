@@ -46,11 +46,13 @@ nohup etcd --listen-client-urls [http://10.27.166.170:2379](http://10.27.166.170
 
 启动MongoDB：
 
-/usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongodb.conf 
+/usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongodb.conf
 
 进入MongoDB：
 
 /usr/local/mongodb/bin/mongo
 
+修改密码：
 
+/user/local/php7/bin/php -r 'echo md5\("密码+密盐"\);'
 
