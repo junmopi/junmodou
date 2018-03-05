@@ -54,5 +54,5 @@ nohup etcd --listen-client-urls [http://10.27.166.170:2379](http://10.27.166.170
 
 修改密码：
 
-/user/local/php7/bin/php -r 'echo md5\("密码+密盐"\);'
+/usr/local/php7/bin/php -r 'echo md5\("密码+密盐"\);'
 
