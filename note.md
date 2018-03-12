@@ -56,7 +56,9 @@ nohup etcd --listen-client-urls [http://10.27.166.170:2379](http://10.27.166.170
 
 /usr/local/php7/bin/php -r 'echo md5\("密码+密盐"\);'
 
-
-
 git merge --no-ff  \[name\]
+
+同步数据库，生成表：
+
+ /usr/local/php7-1/bin/php helper\_mysql.php entities -db xsh\_vote -path /xdata/phpspace/xshsyvote/syLibs/Entities/XshVote -suffix Entity
 
