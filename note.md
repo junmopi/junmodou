@@ -60,5 +60,27 @@ git merge --no-ff  \[name\]
 
 同步数据库，生成表：
 
- /usr/local/php7-1/bin/php helper\_mysql.php entities -db xsh\_vote -path /xdata/phpspace/xshsyvote/syLibs/Entities/XshVote -suffix Entity
+/usr/local/php7-1/bin/php helper\_mysql.php entities -db xsh\_vote -path /xdata/phpspace/xshsyvote/syLibs/Entities/XshVote -suffix Entity
+
+git status
+
+git add syLibs/\*
+
+git status
+
+git commit -am "add vote cashback"
+
+生成API文档：
+
+cd apidoc/
+
+apidoc -i /xdata/phpspace/xshsyvote -o /xdata/apidoc/xshsyvote
+
+异常处理流程：
+
+检查域名解析-&gt;ping出域名对应IP地址-&gt;检查环境访问的根目录-&gt;公众号对应的授权域名-&gt;商户平台对应的支付接口，以及支付证书-&gt;开发平台中绑定对应公众号-&gt;公众号中配置对应的IP白名单以获取access\_token
+
+
+
+
 
