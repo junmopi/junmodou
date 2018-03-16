@@ -1,0 +1,11 @@
+今天在Linux上面装完MySQL，却发现在本地登录可以，但是远程登录却报错Host is not allowed to connect to this MySQL server,找了半天试了网上的一些方法都没有解决，最终在一篇文章里找到了解决方法，特意记录一下。
+
+先说说这个错误，其实就是我们的MySQL不允许远程登录，所以远程登录失败了，解决方法如下：
+
+在装有MySQL的机器上登录MySQL mysql -u root -p密码
+执行use mysql;
+执行update user set host = '%' where user = 'root';这一句执行完可能会报错，不用管它。
+执行FLUSH PRIVILEGES;
+
+经过上面4步，就可以解决这个问题了。 
+注: 第四步是刷新MySQL的权限相关表，一定不要忘了，我第一次的时候没有执行第四步，结果一直不成功，最后才找到这个原因。
