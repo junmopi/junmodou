@@ -12,4 +12,5 @@
 * [切换域名&服务器重启xsh](qie-huan-yu-540d26-fu-wu-qi-zhong-qi-xsh.md)
 * [配置https](pei-zhi-https.md)
 * [dos-attack](dos-attack.md)
+* [tp5-Permission denied](tp5-permission-denied.md)
 
