@@ -90,7 +90,7 @@ apidoc -i /xdata/phpspace/xshsyvote -o /xdata/apidoc/xshsyvote
 
 服务停了，需要重启基础服务，先查看服务，包括nginx、fpm、etcd、sh、api、redis等进程，没有的话需要启动这些服务，有etcd、redis、nginx、fpm，之后再启动项目服务，刷新缓存。
 
+mysql启动在mysql那台服务器，systemctl start mysql
 
-
-
+mongodb启动，在MongoDB那台服务器，/usr/local/mongodb/bin/mongod  --dbpath=/usr/local/mongodb/data/db --logpath=/usr/local/mongodb/data/logs/mongodb.log --fork
 
