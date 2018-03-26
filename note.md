@@ -44,6 +44,8 @@ nohup etcd --listen-client-urls [http://10.27.166.170:2379](http://10.27.166.170
 
 * nohup sh /home/jw/phpspace/swooleyaf/symodules\_inotify.sh &gt;/dev/null 2&gt;&1 & --启动inotify实时更新
 
+第一条和第二条的ip是后端服务器的内网ip，第二条的监听服务对应项目的环境，dev测试环境，product正式环境。
+
 启动MongoDB：
 
 /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongodb.conf
@@ -81,4 +83,14 @@ apidoc -i /xdata/phpspace/xshsyvote -o /xdata/apidoc/xshsyvote
 异常处理流程：
 
 检查域名解析-&gt;ping出域名对应IP地址-&gt;检查环境访问的根目录-&gt;公众号对应的授权域名-&gt;商户平台对应的支付接口，以及支付证书-&gt;开放平台中绑定对应公众号-&gt;公众号中配置对应的IP白名单以获取access\_token
+
+启动redis：
+
+/etc/init.d/redis  start
+
+服务停了，需要重启基础服务，先查看服务，包括nginx、fpm、etcd、sh、api、redis等进程，没有的话需要启动这些服务，有etcd、redis、nginx、fpm，之后再启动项目服务，刷新缓存。
+
+
+
+
 
