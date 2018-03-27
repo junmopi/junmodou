@@ -94,3 +94,29 @@ mysql启动在mysql那台服务器，systemctl start mysql
 
 mongodb启动，在MongoDB那台服务器，/usr/local/mongodb/bin/mongod  --dbpath=/usr/local/mongodb/data/db --logpath=/usr/local/mongodb/data/logs/mongodb.log --fork
 
+镜像后设置数据库密码：
+
+cd /use/local/mysql
+
+bin/mysql -u root 
+
+UPDATE user SET Password=PASSWORD\('XXXXX'\) where USER='root';－－修改密码 
+
+flush privileges; 
+
+exit;
+
+重启mysql
+
+mysql -u root -p GRANT ALL PRIVILEGES ON \*.\* TO'root'@'%'IDENTIFIED BY'密码'WITH GRANT OPTION; －－允许远程访问 
+
+flush privileges; 
+
+exit;
+
+
+
+
+
+前端发起的请求，通过swoole获取，将请求和响应
+
