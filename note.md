@@ -98,23 +98,41 @@ mongodb启动，在MongoDB那台服务器，/usr/local/mongodb/bin/mongod  --dbp
 
 cd /use/local/mysql
 
-bin/mysql -u root 
+bin/mysql -u root
 
-UPDATE user SET Password=PASSWORD\('XXXXX'\) where USER='root';－－修改密码 
+UPDATE user SET Password=PASSWORD\('XXXXX'\) where USER='root';－－修改密码
 
-flush privileges; 
+flush privileges;
 
 exit;
 
 重启mysql
 
-mysql -u root -p GRANT ALL PRIVILEGES ON \*.\* TO'root'@'%'IDENTIFIED BY'密码'WITH GRANT OPTION; －－允许远程访问 
+mysql -u root -p GRANT ALL PRIVILEGES ON \*.\* TO'root'@'%'IDENTIFIED BY'密码'WITH GRANT OPTION; －－允许远程访问
 
-flush privileges; 
+flush privileges;
 
 exit;
 
+安装加启动solr：
 
+将solr-5.5.0.tgz解压到/usr/local/solr/下
+
+cd /usr/local/solr/solr-5.5.0
+
+java -version  --看下java版本，是否为jdk1.8.0
+
+bin/solr start -h localhost -m 1g -p 8983  --开启solr
+
+bin/solr create -c solrFormal -p 8983  --创建
+
+bin/solr stop -p 8983  --停止solr
+
+cp /home/download/install/resources/java/ik-analyzer-solr5.jar /usr/local/solr/solr-5.5.0/server/solr-webapp/webapp/WEB-INF/lib/
+
+将其他正式服务器上的managed-schema文件覆盖掉原来/usr/local/solr/solr-5.5.0/server/solr/solrFormal/conf/下的
+
+再重启solr
 
 
 
