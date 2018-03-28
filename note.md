@@ -136,7 +136,7 @@ cp /home/download/install/resources/java/ik-analyzer-solr5.jar /usr/local/solr/s
 
 微信签名错误：
 
-确认了AppId，AppSecret, 商户平台中Key，商户平台中的客户密钥都没有问题，
+确认了AppId，AppSecret, 商户平台中Key，商户平台中的客户密钥都没有问题，
 
 用了微信接口工具测试了，确定MD5是完全正确的。
 
@@ -146,7 +146,9 @@ post的xml中确定加了CDATA
 
 第二次又设置一个一模一样的密钥，终于成功了
 
-为什么？？？？
+为什么？？？？謀改
+
+
 
 前端发起的请求，通过swoole获取，将请求和响应
 
