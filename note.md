@@ -152,11 +152,7 @@ post的xml中确定加了CDATA
 
 nohup sh /xdata/phpspace/xshsytask/startTaskCron.sh &gt;/dev/null 2&gt;&1 &    --常驻内存
 
-前端发起的请求，通过swoole获取，将请求和响应
+将fpm加入到chkconfig来管理，通过service来启动：chkconfig --add /etc/init.d/php7-fpm
 
-linux命令大全：http://man.linuxde.net
-
-
-
-
+linux命令大全：[http://man.linuxde.net](http://man.linuxde.net)
 
