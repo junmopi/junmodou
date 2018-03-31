@@ -156,9 +156,9 @@ nohup sh /xdata/phpspace/xshsytask/startTaskCron.sh &gt;/dev/null 2&gt;&1 &    -
 
 linux命令大全：[http://man.linuxde.net](http://man.linuxde.net)
 
-
-
 退出telnet：
 
 先Ctrl+\]，然后quit Connection closed退出。
+
+swoole的onRequest事件中，服务启动后，服务器中监听的端口无没返回，需要在阿里云的安全组配置中开启相应的端口。
 
