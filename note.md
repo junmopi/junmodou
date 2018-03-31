@@ -156,3 +156,9 @@ nohup sh /xdata/phpspace/xshsytask/startTaskCron.sh &gt;/dev/null 2&gt;&1 &    -
 
 linux命令大全：[http://man.linuxde.net](http://man.linuxde.net)
 
+
+
+退出telnet：
+
+先Ctrl+\]，然后quit Connection closed退出。
+
