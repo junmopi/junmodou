@@ -24,6 +24,8 @@ systemctl  enable  crond 自动启动定时任务
 
 systemctl  start crond 开启定时任务服务
 
+格式化：shift+alt+F
+
 报seaslog错误时：
 
 查看seaslog目录的权限，若为root权限，则执行以下：
@@ -163,8 +165,6 @@ linux命令大全：[http://man.linuxde.net](http://man.linuxde.net)
 先Ctrl+\]，然后quit Connection closed退出。
 
 swoole的onRequest事件中，服务启动后，服务器中监听的端口无没返回，需要在阿里云的安全组配置中开启相应的端口。
-
-
 
 新搭建的项目需知：
 
