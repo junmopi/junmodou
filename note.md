@@ -170,3 +170,5 @@ swoole的onRequest事件中，服务启动后，服务器中监听的端口无�
 
 1，项目中helper开头的某些文件中的ip地址，域名，目录，环境的更换；如定时任务中的ip地址和域名，sh脚本中的目录等。
 
+打印日志：Log::log\("12345:" . print\_r\($statDayVotes, true\) . ' pids:' . print\_r\($pids, true\)\);
+
