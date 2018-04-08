@@ -164,3 +164,9 @@ linux命令大全：[http://man.linuxde.net](http://man.linuxde.net)
 
 swoole的onRequest事件中，服务启动后，服务器中监听的端口无没返回，需要在阿里云的安全组配置中开启相应的端口。
 
+
+
+新搭建的项目需知：
+
+1，项目中helper开头的某些文件中的ip地址，域名，目录，环境的更换；如定时任务中的ip地址和域名，sh脚本中的目录等。
+
