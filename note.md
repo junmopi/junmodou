@@ -26,6 +26,8 @@ systemctl  start crond 开启定时任务服务
 
 报seaslog错误时：
 
+查看seaslog目录的权限，若为root权限，则执行以下：
+
 chown -R  www seaslog/
 
 chgrp -R www seaslog/
