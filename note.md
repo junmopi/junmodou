@@ -170,3 +170,7 @@ swoole的onRequest事件中，服务启动后，服务器中监听的端口无�
 
 **20.打印日志：**Log::log\("12345:" . print\_r\($statDayVotes, true\) . ' pids:' . print\_r\($pids, true\)\);
 
+**21.启动swoole客户端：**正确的姿势，先启动之前做的TCP服务：php server.php 再启动这个客户端：php client.php
+
+**22.php扩展下载地址：**http://pecl.php.net
+
