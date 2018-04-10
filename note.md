@@ -52,19 +52,19 @@ chgrp -R www seaslog/
 
 **8.启动MongoDB：**
 
-/usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongodb.conf
+/usr/local/mongodb/bin/mongod --dbpath=/usr/local/mongodb/data/db --logpath=/usr/local/mongodb/data/logs/mongodb.log  --fork
 
 进入MongoDB：
 
 /usr/local/mongodb/bin/mongo
 
-修改密码：
+**9-1.修改密码：**
 
 /usr/local/php7/bin/php -r 'echo md5\("密码+密盐"\);'
 
 git merge --no-ff  \[name\]
 
-**9.同步数据库，生成表：**
+**9-2.同步数据库，生成表：**
 
 /usr/local/php7-1/bin/php helper\_mysql.php entities -db xsh\_vote -path /xdata/phpspace/xshsyvote/syLibs/Entities/XshVote -suffix Entity
 
@@ -172,5 +172,5 @@ swoole的onRequest事件中，服务启动后，服务器中监听的端口无�
 
 **21.启动swoole客户端：**正确的姿势，先启动之前做的TCP服务：php server.php 再启动这个客户端：php client.php
 
-**22.php扩展下载地址：**http://pecl.php.net
+**22.php扩展下载地址：**[http://pecl.php.net](http://pecl.php.net)
 
