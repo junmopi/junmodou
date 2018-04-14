@@ -174,7 +174,7 @@ swoole的onRequest事件中，服务启动后，服务器中监听的端口无�
 
 **22.php扩展下载地址：**[http://pecl.php.net](http://pecl.php.net)
 
-23.脚本安装：
+**23.脚本安装：**
 
 先检查好配置，ip是不是指向需要安装环境的ip。
 
