@@ -204,9 +204,7 @@ git checkout master    ----切换到master分支
 
 git merge --no-ff dev   -----将dev分支合并到master
 
-git push origin master ----将合并分支后的代码上传
+git push origin master ----将合并分支后的代码推到代码库
 
 git checkout dev          ----切换回dev分支
-
-
 
