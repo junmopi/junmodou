@@ -186,3 +186,27 @@ swoole的onRequest事件中，服务启动后，服务器中监听的端口无�
 
 /usr/local/python3/bin/fab -f fabfile.py installEnv:envType="syMysql",envStep=1   ---安装mysql
 
+**24.redis异常解决：**
+
+出现错误：Fatal error:  Uncaught RedisException: MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error
+
+解决办法：
+
+redis-cli    --连接到redis服务器
+
+AUTH 'Redis数据库密码'
+
+config set stop-writes-on-bgsave-error no  ---执行命令
+
+**25.合并分支：**
+
+git checkout master    ----切换到master分支
+
+git merge --no-ff dev   -----将dev分支合并到master
+
+git push origin master ----将合并分支后的代码上传
+
+git checkout dev          ----切换回dev分支
+
+
+
