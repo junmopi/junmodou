@@ -200,6 +200,8 @@ config set stop-writes-on-bgsave-error no  ---执行命令
 
 **25.合并分支：**
 
+git checkout --track -b master origin/master   
+
 git checkout master    ----切换到master分支
 
 git merge --no-ff dev   -----将dev分支合并到master
