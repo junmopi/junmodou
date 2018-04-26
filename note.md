@@ -200,7 +200,7 @@ config set stop-writes-on-bgsave-error no  ---执行命令
 
 **25.合并分支：**
 
-git checkout --track -b master origin/master   
+git checkout --track -b master origin/master
 
 git checkout master    ----切换到master分支
 
@@ -209,4 +209,18 @@ git merge --no-ff dev   -----将dev分支合并到master
 git push origin master ----将合并分支后的代码推到代码库
 
 git checkout dev          ----切换回dev分支
+
+**26.安装composer**
+
+curl -sS http://install.phpcomposer.com/installer \| /usr/local/php7/bin/php
+
+curl -sS https://getcomposer.org/installer \| php
+
+curl -sS https://getcomposer.org/installer \| /usr/local/php7/bin/php
+
+./composer.phar dump-autoload -o
+
+cp composer.phar /usr/local/bin/composer
+
+/usr/local/php7/bin/php composer.phar dump-autoload ----更新
 
