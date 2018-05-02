@@ -212,15 +212,31 @@ git checkout dev          ----切换回dev分支
 
 **26.安装composer**
 
-curl -sS http://install.phpcomposer.com/installer \| /usr/local/php7/bin/php
+curl -sS [http://install.phpcomposer.com/installer](http://install.phpcomposer.com/installer) \| /usr/local/php7/bin/php
 
-curl -sS https://getcomposer.org/installer \| php
+curl -sS [https://getcomposer.org/installer](https://getcomposer.org/installer) \| php
 
-curl -sS https://getcomposer.org/installer \| /usr/local/php7/bin/php
+curl -sS [https://getcomposer.org/installer](https://getcomposer.org/installer) \| /usr/local/php7/bin/php
 
 ./composer.phar dump-autoload -o
 
 cp composer.phar /usr/local/bin/composer
 
 /usr/local/php7/bin/php composer.phar dump-autoload ----更新
+
+**27.在原有分支上创建新的项目分支**
+
+先git checkout -b \[新项目分支名\]   
+
+rm -rf ./\*   ---删除掉原来分支拷贝过来的文件
+
+再将需要copy的文件除了包含.git之外的文件复制到该分支上
+
+git add .
+
+git commit -am "注释内容"
+
+git push origin \[新项目分支名\]   ---推到代码库
+
+
 
