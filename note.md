@@ -108,15 +108,19 @@ cd /use/local/mysql
 
 bin/mysql -u root
 
+use mysql;
+
 UPDATE user SET Password=PASSWORD\('XXXXX'\) where USER='root';－－修改密码
 
 flush privileges;
 
 exit;
 
-systemctl  mysql  restart   －－重启mysql
+systemctl restart mysql    －－重启mysql
 
-mysql -u root -p GRANT ALL PRIVILEGES ON \*.\* TO'root'@'%'IDENTIFIED BY'密码'WITH GRANT OPTION; －－允许远程访问
+bin/mysql -u root -p 
+
+GRANT ALL PRIVILEGES ON \*.\* TO'root'@'%'IDENTIFIED BY'密码'WITH GRANT OPTION; －－允许远程访问
 
 flush privileges;
 
@@ -226,7 +230,7 @@ cp composer.phar /usr/local/bin/composer
 
 **27.在原有分支上创建新的项目分支**
 
-先git checkout -b \[新项目分支名\]   
+先git checkout -b \[新项目分支名\]
 
 rm -rf ./\*   ---删除掉原来分支拷贝过来的文件
 
@@ -237,6 +241,4 @@ git add .
 git commit -am "注释内容"
 
 git push origin \[新项目分支名\]   ---推到代码库
-
-
 
