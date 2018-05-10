@@ -20,5 +20,9 @@ admin.nodeInfo   查看节点信息
 
 eth.coinbase   查看当前矿工账户
 
- personal.unlockAccount\(eth.accounts\[0\]\)      **解锁账号：** 使用账户资金前都需要先解锁账号
+personal.unlockAccount\(eth.accounts\[0\]\)      **解锁账号：** 使用账户资金前都需要先解锁账号
+
+转账：eth.sendTransaction\({from:eth.accounts\[0\],to:"0xdc863b5fa618e1327054be5dbfec7f6809cad136",value:web3.toWei\(3,"ether"\)}\)
+
+ 使用 txpool.status 可以看到交易状态
 
