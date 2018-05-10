@@ -20,7 +20,5 @@ admin.nodeInfo   查看节点信息
 
 eth.coinbase   查看当前矿工账户
 
-
-
-
+ personal.unlockAccount\(eth.accounts\[0\]\)      **解锁账号：** 使用账户资金前都需要先解锁账号
 
