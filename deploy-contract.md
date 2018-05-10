@@ -14,11 +14,13 @@ miner.start\(\)  开始挖矿
 
 miner.stop\(\)  结束挖矿
 
-eth.getBalance\(eth.accounts\[0\]\) 查询第一个账户的余额
+eth.getBalance\(eth.accounts\[0\]\) 或者 web3.fromWei\(eth.getBalance\(eth.accounts\[0\]\), "ether"\)      查询第一个账户的余额
 
 admin.nodeInfo   查看节点信息
 
 eth.coinbase   查看当前矿工账户
+
+
 
 
 
