@@ -18,3 +18,7 @@ eth.getBalance\(eth.accounts\[0\]\) 查询第一个账户的余额
 
 admin.nodeInfo   查看节点信息
 
+eth.coinbase   查看当前矿工账户
+
+
+
