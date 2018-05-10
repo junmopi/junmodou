@@ -24,5 +24,13 @@ personal.unlockAccount\(eth.accounts\[0\]\)      **解锁账号：** 使用账�
 
 转账：eth.sendTransaction\({from:eth.accounts\[0\],to:"0xdc863b5fa618e1327054be5dbfec7f6809cad136",value:web3.toWei\(3,"ether"\)}\)
 
- 使用 txpool.status 可以看到交易状态
+使用 txpool.status 可以看到交易状态
+
+**查看区块数据**
+
+ eth.blockNumber
+
+ eth.getTransaction\("0x0c59f431068937cbe9e230483bc79f59bd7146edc8ff5ec37fea6710adcab825"\)
+
+ eth.getBlock\(1\) 通过区块号查看区块
 
