@@ -48,6 +48,8 @@ chgrp -R www seaslog/
 
 * nohup sh /home/jw/phpspace/swooleyaf/symodules\_inotify.sh &gt;/dev/null 2&gt;&1 &** --启动inotify实时更新**
 
+* 启动服务前，在项目根目录下加上**pidfile**文件夹，这样就不会停止失败了
+
 第一条和第二条的ip是后端服务器的内网ip，第二条的监听服务对应项目的环境，dev测试环境，product正式环境。
 
 **8.启动MongoDB：**
@@ -118,7 +120,7 @@ exit;
 
 systemctl restart mysql    －－重启mysql
 
-bin/mysql -u root -p 
+bin/mysql -u root -p
 
 GRANT ALL PRIVILEGES ON \*.\* TO'root'@'%'IDENTIFIED BY'密码'WITH GRANT OPTION; －－允许远程访问
 
