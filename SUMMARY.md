@@ -20,4 +20,5 @@
 * [deploy contract](deploy-contract.md)
 * [ethereum](ethereum.md)
 * [阿里云-磁盘扩容](a-li-4e91-ci-pan-kuo-rong.md)
+* [test](test.md)
 
