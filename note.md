@@ -244,3 +244,7 @@ git commit -am "注释内容"
 
 git push origin \[新项目分支名\]   ---推到代码库
 
+**28.密码输入框禁止粘贴，右键功能，复制和剪切**
+
+&lt;input name="pwd" type="password" id="pwd" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false"/&gt;
+
