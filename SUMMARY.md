@@ -22,4 +22,5 @@
 * [阿里云-磁盘扩容](a-li-4e91-ci-pan-kuo-rong.md)
 * [test](test.md)
 * [node](node.md)
+* [solidity](solidity.md)
 

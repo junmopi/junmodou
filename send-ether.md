@@ -486,7 +486,37 @@ Ethereum钱包截图2015-12-03 3.50.36 PM 11。
 
 您将被重定向到首页，在那里您可以看到您的事务等待确认。点击“Etherbase”\(你的主要账户\)账户，在不超过一分钟后，你会发现你的账户将显示你拥有你刚刚创建的100%的股份。发送一些给一些朋友:选择“发送”，然后选择你想发送的货币\(或你新创建的股票\)，粘贴你朋友的地址在“To”字段和按“发送”。
 
-以太币交易官方网站:https://etherscan.io/
+以太币交易官方网站:[https://etherscan.io/](https://etherscan.io/)
 
-查看以太币余额:https://www.etherchain.org/
+查看以太币余额:[https://www.etherchain.org/](https://www.etherchain.org/)
+
+收集整理了一些免费区块链、以太坊技术开发相关的文件，有需要的可以下载，文件链接：
+
+1. web3.js API官方文档中文版：https://pan.baidu.com/s/1hOV9hEzi7hFxJCL4LTvC6g
+
+ 2. 以太坊官方文档中文版   ：https://pan.baidu.com/s/1ktODJKLMBmkOsi8MPrpIJA
+
+ 3. 以太坊白皮书中文版    ：https://pan.baidu.com/s/1bzAFnzJ35hlQxJ2J4Oj-Ow
+
+ 4. Solidity的官方文档中文版 ：https://pan.baidu.com/s/18yp9XjEqAHpiFm2ZSCygHw
+
+ 5. Truffle的官方文档中文版 ：https://pan.baidu.com/s/1y6SVd7lSLUHK21YF5FzIUQ
+
+ 6. C\#区块链编程指南     ：https://pan.baidu.com/s/1sJPLqp1eQqkG7jmxqwn3EA
+
+ 7. 区块链技术指南    ：https://pan.baidu.com/s/13cJxAa80I6iMCczA04CZhg
+
+ 8. 精通比特币中文版   ：https://pan.baidu.com/s/1lz6te3wcQuNJm28rFvBfxg
+
+ 9. Node.js区块链开发    ：https://pan.baidu.com/s/1Ldpn0DvJ5LgLqwix6eWgyg
+
+ 10. geth使用指南文档中文版  ：https://pan.baidu.com/s/1M0WxhmumF\_fRqzt\_cegnag
+
+ 11. 以太坊DApp开发环境搭建-Ubuntu  : https://pan.baidu.com/s/10qL4q-uKooMehv9X2R1qSA
+
+ 12. 以太坊DApp开发环境搭建-windows ：https://pan.baidu.com/s/1cyYkhIJIFuI2oyxM9Ut0eA
+
+ 13. 以太坊DApp开发私链搭建-Ubuntu  : https://pan.baidu.com/s/1aBOFZT2bCjD2o0EILBWs-g
+
+ 14. 以太坊DApp开发私链搭建-windows ：https://pan.baidu.com/s/10Y6F1cqUltZNN99aJv9kAA
 
