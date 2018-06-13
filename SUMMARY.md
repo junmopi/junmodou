@@ -23,5 +23,4 @@
 * [test](test.md)
 * [node](node.md)
 * [solidity](solidity.md)
-* [contract](contract.md)
 
