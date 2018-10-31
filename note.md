@@ -42,11 +42,11 @@ chgrp -R www seaslog/
 
 * nohup etcd --listen-client-urls [http://10.27.166.170:2379](http://10.27.166.170:2379) --advertise-client-urls [http://10.27.166.170:2379](http://10.27.166.170:2379) &gt;/dev/null &   ** --启动etcd服务**
 
-* nohup etcdctl watch sydev/modules/ sydev/modules0 &gt;/usr/local/inotify/symodules/change\_service.txt --endpoints=\[10.27.166.170:2379\] 2&gt;&1 &    **--启动etcd监听服务**
+* nohup etcdctl watch syproduct/modules/ syproduct/modules0 &gt;/usr/local/inotify/symodules/change\_service.txt --endpoints=\[10.27.166.170:2379\] 2&gt;&1 &    **--启动etcd监听服务**
 
-* chmod a+x /home/jw/phpspace/swooleyaf/symodules\_inotify.sh
+* chmod a+x /home/phpspace/swooleyaf/symodules\_inotify.sh
 
-* nohup sh /home/jw/phpspace/swooleyaf/symodules\_inotify.sh &gt;/dev/null 2&gt;&1 &** --启动inotify实时更新**
+* nohup sh /home/phpspace/swooleyaf/symodules\_inotify.sh &gt;/dev/null 2&gt;&1 &** --启动inotify实时更新**
 
 * 启动服务前，在项目根目录下加上**pidfile**文件夹，这样就不会停止失败了
 
@@ -54,11 +54,15 @@ chgrp -R www seaslog/
 
 **8.启动MongoDB：**
 
-/usr/local/mongodb/bin/mongod --dbpath=/usr/local/mongodb/data/db --logpath=/usr/local/mongodb/data/logs/mongodb.log  --fork
+/usr/local/mongodb/bin/mongod --dbpath=/usr/local/mongodb/data/db --logpath=/usr/local/mongodb/data/logs/mongodb.log --fork
 
 进入MongoDB：
 
 /usr/local/mongodb/bin/mongo
+
+use admin
+
+db.createUser({user:'admin',pwd:'密码', roles:[{role:'root', db:'admin'}]})
 
 **9-1.修改密码：**
 
@@ -248,3 +252,5 @@ git push origin \[新项目分支名\]   ---推到代码库
 
 &lt;input name="pwd" type="password" id="pwd" onpaste="return false" oncontextmenu="return false" oncopy="return false" oncut="return false"/&gt;
 
+**29.解压tar.xz文件**
+先 xz -d xxx.tar.xz 将 xxx.tar.xz解压成 xxx.tar 然后，再用 tar xvf xxx.tar来解包。
