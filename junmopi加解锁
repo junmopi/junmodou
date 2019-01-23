@@ -1,0 +1,102 @@
+Linux chattr锁定关键的系统文件
+我们通过chattr来锁定一个文件为不可修改或不可删除时，要用到chattr的+i数；这在ext2和ext3文件系统是有效的，但在reiserfs文件系统是没有任何效果的；
+
+8种模式：
+
+a：让文件或目录仅供附加用途。
+
+b：不更新文件或目录的最后存取时间。
+
+c：将文件或目录压缩后存放。
+
+d：将文件或目录排除在倾倒操作之外。
+
+i：不得任意更动文件或目录。
+
+s：保密性删除文件或目录。
+
+S：即时更新文件或目录。
+
+u：预防以外删除。
+
+语法：
+
+chattr [-RV][-v<版本编号>][+/-/=<属性>][文件或目录...]
+
+参数：
+
+-R 递归处理，将指定目录下的所有文件及子目录一并处理。
+
+-v<版本编号> 设置文件或目录版本。
+
+-V 显示指令执行过程。
+
++<属性> 开启文件或目录的该项属性。
+
+-<属性> 关闭文件或目录的该项属性。
+
+=<属性> 指定文件或目录的该项属性。
+
+命令示例：
+
+[root@w zdw]# chattr +a test.sh 
+[root@w zdw]# rm -f test.sh 
+rm: cannot remove `test.sh': Operation not permitted
+[root@w zdw]# echo 11 
+>
+>
+test.sh 
+[root@w zdw]# echo 11 
+>
+>
+test.sh 
+[root@w zdw]# echo 11 
+>
+test.sh  
+-bash: test.sh: Operation not permitted
+[root@w zdw]# lsattr test.sh 
+-----a-------e- test.sh
+锁定关键的系统文件可以增加系统的安全性，使用chattr命令来锁定，下面是几个需要锁定的文件：
+
+chattr +i /etc/passwd 用户文件
+
+chattr +i /etc/shadow 用户密码文件
+
+chattr +i /etc/group 用户组文件
+
+chattr +i /etc/gshadow 主密码文件
+
+chattr +i /etc/inittab 开机启动的重要文件
+
+示例：
+
+加锁：
+
+[root@localhost ~]# chattr +i /etc/passwd /etc/shadow /etc/group /etc/gshadow /etc/inittab
+[root@localhost ~]# rm -f /etc/passwd
+rm: cannot remove '/etc/passwd': Operation not permitted
+[root@localhost ~]# useradd test1
+useradd: cannot open /etc/passwd
+解锁：
+
+[root@localhost ~]# chattr -i /etc/passwd /etc/shadow /etc/group /etc/gshadow /etc/inittab
+注：非法用法也可以使用chattr -i来解锁。我们可以把chattr换成别的名称，这样就找不到了。如下
+
+修改chattr名称：
+
+[root@localhost ~]# which chattr                           找到chattr在哪
+/usr/bin/chattr
+[root@localhost ~]# mv /usr/bin/chattr /usr/bin/zdw        把chattr换成zdw
+[root@localhost ~]# chattr -i /etc/passwd /etc/shadow /etc/group /etc/gshadow /etc/inittab 
+-bash: /usr/bin/chattr: 2‰é￡a––     用chattr解锁不成功
+[root@localhost ~]# zdw -i /etc/passwd /etc/shadow /etc/group /etc/gshadow /etc/inittab 
+[root@localhost ~]# useradd test1                          用zdw解锁成功，添加新用户成功
+[root@localhost ~]#
+查看是否加锁：
+
+[root@localhost ~]# zdw +i /etc/passwd /etc/shadow /etc/group /etc/gshadow /etc/inittab 
+[root@localhost ~]# lsattr /etc/passwd                      查看是否加锁用lsattr命令
+----i----------- /etc/passwd                                如果有i就说明加锁了
+[root@localhost ~]# zdw -i /etc/passwd /etc/shadow /etc/group /etc/gshadow /etc/inittab 
+[root@localhost ~]# lsattr /etc/passwd
+---------------- /etc/passwd                                没有i就说明没有加锁
