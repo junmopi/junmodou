@@ -257,4 +257,5 @@ git push origin \[新项目分支名\]   ---推到代码库
 先 xz -d xxx.tar.xz 将 xxx.tar.xz解压成 xxx.tar 然后，再用 tar xvf xxx.tar来解包。
 
 **30.查看linux版本**
+
 lsb_release -a
