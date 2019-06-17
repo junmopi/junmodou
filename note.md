@@ -64,6 +64,10 @@ use admin
 
 db.createUser({user:'admin',pwd:'密码', roles:[{role:'root', db:'admin'}]})
 
+kill -15 PID --关闭mongodb服务
+
+/usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongodb.conf ---然后再启动 mongodb 服务
+
 **9-1.修改密码：**
 
 /usr/local/php7/bin/php -r 'echo md5\("密码+密盐"\);'
@@ -72,7 +76,7 @@ git merge --no-ff  \[name\]
 
 **9-2.同步数据库，生成表：**
 
-/usr/local/php7-1/bin/php helper\_mysql.php entities -db xsh\_vote -path /xdata/phpspace/xshsyvote/syLibs/Entities/XshVote -suffix Entity
+/usr/local/php7/bin/php helper\_mysql.php entities -db xsh\_vote -path /xdata/phpspace/xshsyvote/syLibs/Entities/XshVote -suffix Entity
 
 git status
 
@@ -220,6 +224,14 @@ git push origin master ----将合并分支后的代码推到代码库
 
 git checkout dev          ----切换回dev分支
 
+git fetch --all ---匹配所有的分支
+
+git checkout --track -b dev origin/dev ---匹配dev
+
+git checkout --track -b master origin/master ---匹配master
+
+git fetch [name] [远程新分支]:[本地新分支] --本地拉取新分支
+
 **26.安装composer**
 
 curl -sS [http://install.phpcomposer.com/installer](http://install.phpcomposer.com/installer) \| /usr/local/php7/bin/php
@@ -265,3 +277,17 @@ lsb_release -a
 申请微信支付时报<该商户产品权限未开通，请在商户后台—>产品中心检查>，已经确定绑定的appid，商户号以及商户api密钥都是正确的，却还是出现这个错误。
 
 原因是需要在产品中心->产品大全里面开通对应的支付，例如公众号里面我们用的是JSAPI支付，就需要开通JSAPI支付，如果是使用APP支付，就需要在里面开通APP支付，小程序也是一样。
+
+**31.删除git远程分支**
+
+git remote -v ---查看代码仓库名称
+
+git remote rm [name] ---删除代码仓库
+
+git remote add [name] [url(删除冒号和密码，仅保留账号)]
+
+这样下次pull或者push 代码时都需要输入密码
+
+**32.phpstorm风格配置jar包使用**
+
+打开phpstorm,找到file -> import setting...
