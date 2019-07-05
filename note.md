@@ -278,7 +278,7 @@ lsb_release -a
 
 原因是需要在产品中心->产品大全里面开通对应的支付，例如公众号里面我们用的是JSAPI支付，就需要开通JSAPI支付，如果是使用APP支付，就需要在里面开通APP支付，小程序也是一样。
 
-**31.删除git远程分支**
+**32.删除git远程分支**
 
 git remote -v ---查看代码仓库名称
 
@@ -288,10 +288,10 @@ git remote add [name] [url(删除冒号和密码，仅保留账号)]
 
 这样下次pull或者push 代码时都需要输入密码
 
-**32.phpstorm风格配置jar包使用**
+**33.phpstorm风格配置jar包使用**
 
 打开phpstorm,找到file -> import setting...
 
-**33.杀死grep到的一系列进程,例如grep [name]**
+**34.杀死grep到的一系列进程,例如grep [name]**
 
 ps -ef | grep [name] | grep -v grep | cut -c 9-15 | xargs kill -s 9
