@@ -291,3 +291,7 @@ git remote add [name] [url(删除冒号和密码，仅保留账号)]
 **32.phpstorm风格配置jar包使用**
 
 打开phpstorm,找到file -> import setting...
+
+**33.杀死grep到的一系列进程,例如grep [name]**
+
+ps -ef | grep [name] | grep -v grep | cut -c 9-15 | xargs kill -s 9
