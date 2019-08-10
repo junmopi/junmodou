@@ -1,14 +1,14 @@
-###如果将web端网站封装成桌面客户端程序。
-##1.下载node.js,下载地址https://nodejs.org/en/,安装node.js,一直next就可以了。
+*如果将web端网站封装成桌面客户端程序。*
+**1.下载node.js,下载地址https://nodejs.org/en/,安装node.js,一直next就可以了。**
 
-##2.打开命令行工具,键入 npm -v 查看nodejs版本号，看有没有安装成功。
+**2.打开命令行工具,键入 npm -v 查看nodejs版本号，看有没有安装成功。**
 
-##3.使用npm安装nativefier,键入 npm install nativefier -g   注意:若是安装时遇到error错误，有可能是网络使用了代理，可以关闭代理或者修改npm配置。
+**3.使用npm安装nativefier,键入 npm install nativefier -g   注意:若是安装时遇到error错误，有可能是网络使用了代理，可以关闭代理或者修改npm配置。**
 
-##4.命名打包,键入 nativefier --name "YouWantName" "http://www.baidu.com"
+**4.命名打包,键入 nativefier --name "YouWantName" "http://www.baidu.com"**
 
-##5.打包ok之后，会有一个APP-win32-x64的文件在 C:\Users\Administrator\下，找到这个文件，打开文件，即可运行app.exe
+**5.打包ok之后，会有一个APP-win32-x64的文件在 C:\Users\Administrator\下，找到这个文件，打开文件，即可运行app.exe**
 
 其实到这里就算完全封装完成了，但是想要真正实现供用户下载直接使用，还有后续操作需要进行。
 
-##6.下载WinRAR压缩软件，将APP-win32-x64文件重新封装成.exe的格式，通过软件的高级选项，可以让该文件下载好后就可以立即解压运行并且生成桌面快捷方式，包括桌面图标都是该网站的icon图标。操作方法参考https://jingyan.baidu.com/article/6fb756ec9a9e09241858fbc1.html
+**6.下载WinRAR压缩软件，将APP-win32-x64文件重新封装成.exe的格式，通过软件的高级选项，可以让该文件下载好后就可以立即解压运行并且生成桌面快捷方式，包括桌面图标都是该网站的icon图标。操作方法参考https://jingyan.baidu.com/article/6fb756ec9a9e09241858fbc1.html**
