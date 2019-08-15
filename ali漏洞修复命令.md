@@ -1,4 +1,4 @@
-**阿里云ECS服务器46个漏洞修复命令**
+**阿里云ECS服务器27个漏洞修复命令**
 
 yum update kernel
 
@@ -53,3 +53,5 @@ yum update libreport-plugin-reportuploader
 yum update libreport-plugin-rhtsupport
 
 yum update libreport-python
+
+原文地址：https://www.sojson.com/blog/247.html
