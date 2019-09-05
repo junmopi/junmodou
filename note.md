@@ -142,7 +142,7 @@ exit;
 
 cd /usr/local/solr/solr-5.5.0
 
-java -version  --看下java版本，是否为jdk1.8.0
+java -version  --看下java版本，是否为jdk1.8.0，无版本显示则运行source /etc/profile
 
 bin/solr start -h localhost -m 1g -p 8983  --开启solr
 
