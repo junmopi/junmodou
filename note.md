@@ -297,3 +297,6 @@ git remote add [name] [url(删除冒号和密码，仅保留账号)]
 ps -ef | grep [name] | grep -v grep | cut -c 9-15 | xargs kill -s 9   
 
 （--参考https://blog.csdn.net/shenhuan1104/article/details/75808146）
+**35.查看登录日志**
+
+ last -f /var/log/wtmp
