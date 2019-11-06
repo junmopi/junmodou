@@ -14,6 +14,8 @@
 
 然后再将der转换为pem格式  openssl x509 -in input.der -inform DER -out output.pem -outform PEM
 
+最后将key转换为pem格式 openssl rsa -in demo.key -out demo.pem
+
 6.将配置好的CDN加速域名中的CName值复制，解析到对应域名上，主机记录为CDN加速域名，将记录值粘贴，确认。
 
 7.在服务器domain.ini配置中加入CDN加速域名，与前端相对应，重启fpm。
