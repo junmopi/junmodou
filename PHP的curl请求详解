@@ -22,6 +22,7 @@ curl_close()
 
 2、实例：
 
+
 php curl 发送get请求：
 
 //初始化
