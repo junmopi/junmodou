@@ -26,8 +26,7 @@ curl_close()
 2、实例：
 
 
-php curl 发送get请求：
-
+**php curl 发送get请求：**
 //初始化
 $curl = curl_init();
 //设置抓取的url
@@ -43,9 +42,8 @@ echo curl_getinfo($curl,CURLINFO_HTTP_CODE); //输出请求状态码
 curl_close($curl);
 //显示获得的数据
 print_r($data);
-php curl 发送post请求：
 
-
+**php curl 发送post请求：**
 //初始化
 $curl = curl_init();
 //设置抓取的url
@@ -77,10 +75,9 @@ $content = $_REQUEST['content'];
 error_log($title."\n",3,'error.log');
 error_log($content."\n",3,'error.log');
 echo 'ok';
-3、PHP cURL 函数：
 
+**3、PHP cURL 函数：**
 以下包含了PHP cURL函数列表：
-
 函数    描述
 curl_close()    关闭一个cURL会话。
 curl_copy_handle()    复制一个cURL句柄和它的所有选项。
@@ -111,16 +108,14 @@ curl_share_setopt()    设置一个共享句柄的cURL传输选项。
 curl_strerror()    返回错误代码的字符串描述。
 curl_unescape()    解码URL编码后的字符串。
 curl_version()    获取cURL版本信息。
-4、curl_setopt函数参数介绍：
 
-
+**4、curl_setopt函数参数介绍：**
 bool curl_setopt( resource $ch,int $option, mixed $value)
 
 参数说明：
 ch            由 curl_init() 返回的 cURL 句柄。
 option     需要设置的CURLOPT_XXX选项。
 value       将设置在option选项上的值。
-
 
 对于下面的这些option的可选参数，value应该被设置一个bool类型的值：
 
@@ -154,7 +149,6 @@ Note:
 
 PHP自动地设置这个选项为TRUE，这个选项仅仅应当在以调试为目的时被改变。
 
- 
 CURLOPT_NOSIGNAL    启用时忽略所有的curl传递给php进行的信号。在SAPI多线程传输时此项被默认启用。    cURL 7.10时被加入。
 CURLOPT_POST    启用时会发送一个常规的POST请求，类型为：application/x-www-form-urlencoded，就像表单提交的一样。     
 CURLOPT_PUT    启用时允许HTTP发送文件，必须同时设置CURLOPT_INFILE和CURLOPT_INFILESIZE。     
@@ -207,7 +201,6 @@ CURLOPT_CUSTOMREQUEST
 Note:
 
 在确定服务器支持这个自定义请求的方法前不要使用。
-
  
 CURLOPT_EGDSOCKET    类似CURLOPT_RANDOM_FILE，除了一个Entropy Gathering Daemon套接字。     
 CURLOPT_ENCODING    HTTP请求头中"Accept-Encoding: "的值。支持的编码有"identity"，"deflate"和"gzip"。如果为空字符串""，请求头会发送所有支持的编码类型。    在cURL 7.10中被加入。
@@ -233,7 +226,6 @@ CURLOPT_SSLKEYPASSWD
 Note:
 
 由于这个选项包含了敏感的密码信息，记得保证这个PHP脚本的安全。
-
  
 CURLOPT_SSLKEYTYPE    CURLOPT_SSLKEY中规定的私钥的加密类型，支持的密钥类型为"PEM"(默认值)、"DER"和"ENG"。     
 CURLOPT_URL    需要获取的URL地址，也可以在curl_init()函数中设置。     
@@ -264,8 +256,7 @@ CURLOPT_WRITEFUNCTION    回调函数名。该函数应接受两个参数。第�
 返回值
 成功时返回 TRUE， 或者在失败时返回 FALSE。
 
-一些状态代码
-
+**一些状态代码**
 1xx：请求收到，继续处理  
 2xx：操作成功收到，分析、接受  
 3xx：完成此请求必须进一步处理  
