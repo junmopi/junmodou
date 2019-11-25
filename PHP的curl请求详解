@@ -23,7 +23,6 @@ curl_close()
 
 php curl 发送get请求：
 
-
 //初始化
 $curl = curl_init();
 //设置抓取的url
