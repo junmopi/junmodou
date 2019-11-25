@@ -26,7 +26,7 @@ curl_close()
 2、实例：
 
 
-**php curl 发送get请求：**
+## php curl 发送get请求：
 //初始化
 $curl = curl_init();
 //设置抓取的url
@@ -43,7 +43,7 @@ curl_close($curl);
 //显示获得的数据
 print_r($data);
 
-**php curl 发送post请求：**
+** php curl 发送post请求： **
 //初始化
 $curl = curl_init();
 //设置抓取的url
