@@ -301,3 +301,12 @@ ps -ef | grep [name] | grep -v grep | cut -c 9-15 | xargs kill -s 9
 **35.查看登录日志**
 
  last -f /var/log/wtmp
+
+**36.mysql连接超时解决方案**
+
+show GLOBAL VARIABLES like '%timeout%';
+
+show  VARIABLES like '%timeout%';
+
+修改wait_timeout和interactive_timeout
+
