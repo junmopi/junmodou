@@ -118,3 +118,6 @@ array\(5\) {
 
 }
 
+
+empty(null)=true，isset(null)=false ，isset('')=true
+
