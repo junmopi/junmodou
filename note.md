@@ -310,3 +310,23 @@ show  VARIABLES like '%timeout%';
 
 修改wait_timeout和interactive_timeout
 
+**37.json_decode()踩坑**
+ <?php 
+   function hiToolfk() { 
+       $test = '1244';
+       if(is_null(json_decode($test))){
+           $res = 1;
+       }else {
+           $res = 0;
+       }
+       return $res;
+   }
+ ?>
+ <p><?=hiToolfk()?></p>
+
+当$test = '1244';时  结果为0，说明不为空
+
+当$test = '1ee4';时  结果为1，说明为空
+
+总结，json_decode()字符串时会返回空，json_decode()数字时会返回数字本身。
+
