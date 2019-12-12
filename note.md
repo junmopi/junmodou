@@ -310,7 +310,7 @@ show  VARIABLES like '%timeout%';
 
 修改wait_timeout和interactive_timeout
 
-**37.json_decode()踩坑**
+**37.is_null(json_decode())踩坑**
  <?php 
    function hiToolfk() { 
        $test = '1244';
