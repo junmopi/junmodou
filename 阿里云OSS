@@ -3,3 +3,7 @@
 访问存储在 oss 里面的文件，会产生下行流量，就是从 oss 流向外网的流量，下行流量包覆盖这部分费用
 
 在 oss 上套了 cdn，访问 cdn 没用命中，cdn 去问 oss 要文件，文件从 oss 流向 cdn 服务器，回源流量包覆盖这部分费用
+
+oss图片处理(压缩，裁剪，等比例缩放，图片样式规则，获取图片信息等)参考以下链接:
+
+https://help.aliyun.com/document_detail/44686.html?spm=a2c4g.11186623.6.1282.395ec1f6kHJK4I
