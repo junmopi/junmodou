@@ -330,3 +330,7 @@ show  VARIABLES like '%timeout%';
 
 总结，json_decode()字符串时会返回空，json_decode()数字时会返回数字本身。
 
+**查看当前连接**
+
+w   杀掉连接  pkill -9 -t TTY值(pts/1)
+
