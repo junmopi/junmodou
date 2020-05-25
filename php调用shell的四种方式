@@ -1,4 +1,4 @@
-php调用shell脚本的五种方式：
+php调用shell脚本的四种方式：
  
 1）exec()
 原型: string exec ( string $command [, array &$output [, int &$return_var ］ )
