@@ -1,0 +1,59 @@
+php调用shell脚本
+ 
+1）exec()
+原型: string exec ( string $command [, array &$output [, int &$return_var ］ )
+说明: exec执行系统外部命令时不会输出结果，而是返回结果的最后一行。如果想得到结果，可以使用第二个参数，让其输出到指定的数组。此数组一个记录代表输出的一行。即如果输出结果有20行，则这个数组就有20条记录，所以如果需要反复输出调用不同系统外部命令的结果，最好在输出每一条系统外部命令结果时清空这个数组unset($output)，以防混乱。第三个参数用来取得命令执行的状态码，通常执行成功都是返回0。
+<?php
+    exec("dir",$output);
+    print_r($output);
+?>
+ 
+2）system()
+原型: string system ( string $command [, int &$return_var ] )
+说明: system和exec的区别在于，system在执行系统外部命令时，它执行给定的命令，输出和返回结果。第二个参数是可选的，用来得到命令执行后的状态码。
+<?php
+system("pwd",$result);
+print $result;//输出命令的结果状态码
+?>
+关于第二个参数结果状态码的简单介绍：
+如果返回0是运行成功，
+在Bash中，当错误发生在致命信号时，bash会返回128+signal number做为返回值。
+如果找不到命令，将会返回127。
+如果命令找到了，但该命令是不可执行的，将返回126。
+除此以外，Bash本身会返回最後一个指令的返回值。
+若是执行中发生错误，将会返回一个非零的值。
+Fatal Signal : 128 + signo
+Can't not find command : 127
+Can't not execute : 126
+Shell script successfully executed : return the last command exit status
+Fatal during execution : return non-zero 
+ 
+ 
+ 
+3）passthru()
+原型: void passthru ( string $command [, int &$return_var ] )
+说明: passthru与system的区别，passthru直接将结果输出到游览器，不返回任何值，且其可以输出二进制，比如图像数据。第二个参数可选，是状态码。
+<?php
+header("Content-type:image/gif");
+passthru("/usr/bin/ppm2tiff  /usr/share/tk8.4/demos/images/teapot.ppm");
+?>
+ 
+4）shell_exec()
+原型: string shell_exec ( string $cmd )
+说明: 直接执行命令$cmd
+<?php
+$output = shell_exec('ls -lart');
+echo "<pre>$output</pre>";
+?>
+ 
+常见问题：在linux上可以执行php中的shell脚本，但在web端不能够访问：
+ 
+解决方法：
+ 
+一般属于权限问题，可
+ 
+一.vi /etc/sudoers
+ 
+   加入：xxx ALL=(ALL)  NOPASSWORD:ALL
+ 
+二.关闭selinux ， 命令：setforence 0 
