@@ -59,3 +59,5 @@ echo "<pre>$output</pre>";
    加入：xxx ALL=(ALL)  NOPASSWORD:ALL
  
 二.关闭selinux ， 命令：setforence 0 
+
+转至https://www.cnblogs.com/yokooo/p/12375118.html
